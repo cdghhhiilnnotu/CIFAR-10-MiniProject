@@ -21,30 +21,6 @@ y_train, y_test = data_y[:math.ceil(data_y.shape[0]*0.7)], data_y[math.ceil(data
 
 
 inputs = keras.Input(shape=(x_train.shape[1], x_train.shape[2], x_train.shape[3]))
-# x = keras.layers.Conv2D(32, 3, padding='same', kernel_regularizer=regularizers.l2(0.01), activation='relu')(inputs)
-# x = keras.layers.MaxPooling2D(2)(x)
-# x = keras.layers.Conv2D(64, 3, padding='same', kernel_regularizer=regularizers.l2(0.01), activation='relu')(x)
-# x = keras.layers.MaxPooling2D(2)(x)
-# # x = keras.layers.BatchNormalization()
-# x = keras.layers.Conv2D(128, 3, padding='same', kernel_regularizer=regularizers.l2(0.01), activation='relu')(x)
-# x = keras.layers.MaxPooling2D()(x)
-# # x = keras.layers.Conv2D(256, 3, activation='relu')(x)
-# # x = keras.layers.MaxPooling2D()(x)
-# # x = keras.layers.Conv2D(512, 3, activation='relu')(x)
-# # x = keras.layers.MaxPooling2D()(x)
-# x = keras.layers.Flatten()(x)
-# # x = keras.layers.Dense(256, activation='relu')(x)
-# # x = keras.layers.Dense(128, activation='relu')(x)
-# x = keras.layers.Dense(64, kernel_regularizer=regularizers.l2(0.01), activation='relu')(x)
-# x = keras.layers.Dense(32, kernel_regularizer=regularizers.l2(0.01), activation='relu')(x)
-
-# x = keras.layers.Conv2D(32, 3, activation='relu')(inputs)
-# x = keras.layers.MaxPooling2D(2)(x)
-
-# x = keras.layers.Conv2D(64, 4, activation='relu')(inputs)
-# x = keras.layers.MaxPooling2D(2)(x)
-# x = keras.layers.Flatten()(x)
-# x = keras.layers.Dense(64, activation='relu')(x)
 
 x = keras.layers.Conv2D(32,(3,3),activation='relu')(inputs)
 x = keras.layers.BatchNormalization()(x)
